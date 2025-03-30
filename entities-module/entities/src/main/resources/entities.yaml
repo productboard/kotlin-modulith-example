@@ -1,0 +1,21 @@
+entities:
+  datasource:
+    url: jdbc:tc:postgresql:15.2:///entitiesdb
+
+spring:
+  application:
+    name: entities
+  datasource:
+    url: ${entities.datasource.url}
+    username: test
+    password: test
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+---
+
+# Common configurations from libs/autoconfigure package
+spring:
+  config:
+    import: classpath:modulith-common.yaml

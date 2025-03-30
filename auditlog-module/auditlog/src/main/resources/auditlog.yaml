@@ -1,0 +1,22 @@
+auditlog:
+  datasource:
+    url: jdbc:tc:postgresql:15.2:///auditlogdb
+
+spring:
+  application:
+    name: auditlog
+  datasource:
+    url: ${auditlog.datasource.url}
+    username: test
+    password: test
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+---
+
+# Common configurations from libs/autoconfigure package
+spring:
+  config:
+    import: classpath:modulith-common.yaml
+---

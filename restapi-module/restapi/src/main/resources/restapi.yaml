@@ -1,0 +1,13 @@
+server:
+  port: 9083
+
+spring:
+  application:
+    name: restapi
+
+---
+
+# Common configurations from libs/autoconfigure package
+spring:
+  config:
+    import: classpath:modulith-common.yaml
